@@ -1,0 +1,91 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+body, header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background: linear-gradient(to bottom, rgba(177, 92, 92, 0.295), transparent); /* Fully transparent gradient */
+    width: 100%;
+    background-color: rgba(173, 93, 247, 0.13); /* Fully transparent background color */
+    z-index: -1; /* Ensure the header is above the video but below other content */
+}
+
+#backgroundVideo {
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire viewport */
+    z-index: -2; /* Place it behind other content */
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 50%;
+    background-image: url('/img/griff.jpg'); 
+    background-size: cover; 
+    background-position: cent
+    -webkit-transition; /* For older versions of Safari */
+    transition: transform 0.5s;
+}
+
+@keyframes semiSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate 180 degrees for a semi-spin */
+    }
+}
+
+.logo:hover {
+    animation: semiSpin 0.5s forwards; /* Apply the semiSpin animation over 0.5 seconds and make it stay at the end state */
+}
+
+/* navigation links for about, portfolio, and contact */
+nav a {
+    margin-left: 20px;
+    color: #000000;
+    text-decoration: none;
+}
+
+nav a :hover {
+    text-decoration: underline;
+}
+
+
+/* container that has summary information */
+.summary-container {
+    width: 1000px; 
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    position: absolute; 
+    top: 50%; 
+    left: 2%; 
+    transform: translateY(-50%); 
+    padding: 20px; 
+    box-sizing: border-box; 
+    z-index: 10; 
+    border: 3px solid rgba(225, 165, 240, 0.212); 
+}
+
