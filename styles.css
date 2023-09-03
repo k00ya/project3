@@ -103,7 +103,11 @@ nav a {
     border: 3px solid rgba(225, 165, 240, 0.212); 
     
 }
+
 .get-started-btn {
+    position: relative;
+    margin-left: 170px;
+    top: 170px;
     padding: 10px 20px; /* Adjust as needed */
     background-color: #007BFF; /* Example blue color */
     color: white;
@@ -117,14 +121,64 @@ nav a {
 .get-started-btn:hover {
     background-color: #0056b3; /* Darken the color a bit on hover */
 }
-
-.summary-image {
-    display: block;
-    width: 50%;
-    margin-top: 50px;
-    margin-left: 50%;
-    margin-right: auto;
+  
+:root {
+    --container-width: 430px;
+    --container-height: 300px;
 }
+  .block {
+    position: absolute;
+    margin: -2px auto;
+    margin-left: 520px;  
+    width: var(--container-width);
+    height: var(--container-height);
+    border-radius: 100px;
+    background: linear-gradient(0deg, #000000, #272727);
+  }
+  
+  .block:before, .block:after {
+    content: '';
+    position: absolute;
+    border-radius: 90px;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(45deg, #fb0086, #ee80ee, #9553e0,#ffff00, #ff0000, #fb0086, 
+      #f134d2, #ebc418,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .block:after {
+    filter: blur(50px);
+  }
+  
+  .summary-image {
+    position: absolute;
+    display: block;
+    width: 435px; /* Adjust as needed */
+    height: 315px; /* Adjust as needed */
+    top: 0px;        /* Adjust as needed */
+    left: 0px;   /* Adjust as needed */
+    border-radius: 20%;
+    z-index: 2;    /* Ensure it's above the .block container */
+}
+
+
 
 
 
