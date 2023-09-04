@@ -41,7 +41,7 @@ header {
     justify-content: center;
     font-weight: bold;
     border-radius: 50%;
-    background-image: url('/img/grief.jpg'); 
+    background-image: url('imge/grief.jpg'); 
     background-size: cover; 
     background-position: center; 
     transition: transform 0.5s;
