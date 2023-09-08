@@ -4,15 +4,43 @@ window.onload = function() {
 
 const video = document.getElementById('backgroundVideoo');
 
-document.getElementById('square1').addEventListener('mouseover', function() {
-    video.style.opacity = '1';
-    video.play();
+['square1', 'square2', 'square3'].forEach((squareId, index) => {
+    const square = document.getElementById(squareId);
+    const audio = document.getElementById(`audio${index + 1}`);
+    
+    // Ensure volume is set to maximum for debugging
+    audio.volume = 1.0;
+
+    // For the video
+    square.addEventListener('mouseover', function() {
+        video.style.opacity = '1';
+        video.play();
+
+        // For the audio
+        let playPromise = audio.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Automatic playback started!
+            }).catch(error => {
+                // Auto-play was prevented. This can help you see if there's an issue with auto-play policies.
+                console.error("Playback failed: ", error);
+            });
+        }
+    });
+    
+    square.addEventListener('mouseout', function() {
+        video.style.opacity = '0';
+        video.pause();
+        
+        // For the audio
+        audio.pause();
+        audio.currentTime = 0;
+    });
 });
 
-document.getElementById('square1').addEventListener('mouseout', function() {
-    video.style.opacity = '0';
-    video.pause();
-});
+
+
 
 // Fade out the summary content and make the squares and header visible upon button click
 document.getElementById('glow-on-hover').addEventListener('click', function() {

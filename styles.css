@@ -271,43 +271,42 @@ nav a:first-child {
   height: 100%;
   z-index: 5; 
 }
- 
+
 .hover-square {
-  width: 150px;  /* Increased width */
-  height: 150px; /* Increased height */
-  background-color: #f39740;  
-  position: absolute;  
+  width: 150px;
+  height: 150px;
+  background-color: #f39740;
+  position: absolute;
   top: 20%;
-  left: 50%; 
+  left: 50%;
   z-index: 100;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
   opacity: 0;
-  transition: 
-    opacity 1s ease-in-out,      
-    transform 0.3s ease-in-out;
-  pointer-events: auto; /* Allow pointer events */
-} 
+  transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
+  pointer-events: auto;
+}
 
 .hover-square:hover {
-  transform: translate(-50%, -50%) scale(1.1); 
+  transform: translate(-50%, -50%) scale(1.1);
 }
- 
+
 #square1 {
-  left: 20%; 
+  left: 20%;
 }
 
 #square2 {
-  left: calc(20% + 170px);  /* Increased spacing */
+  left: calc(20% + 170px);
 }
 
 #square3 {
-  left: calc(20% + 340px);  /* Increased spacing */
+  left: calc(20% + 340px);
 }
 
 .fade-in {
   opacity: 1;
-  transition: opacity 1s ease-out;  
+  transition: opacity 1s ease-out;
 }
+
 
 .header-section {
   position: absolute;
