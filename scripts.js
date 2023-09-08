@@ -4,16 +4,28 @@ window.onload = function() {
 
 const video = document.getElementById('backgroundVideoo');
 
+const videos = {
+    square1: document.getElementById('backgroundVideoo'),
+    square2: document.getElementById('backgroundVideo2'),
+    square3: document.getElementById('backgroundVideo3')
+};
+
 ['square1', 'square2', 'square3'].forEach((squareId, index) => {
     const square = document.getElementById(squareId);
     const audio = document.getElementById(`audio${index + 1}`);
     
+    const video = videos[squareId]; // Select the appropriate video
+
     // Ensure volume is set to maximum for debugging
     audio.volume = 0.3;
 
     // For the video
     square.addEventListener('mouseover', function() {
-        video.style.opacity = '1';
+        Object.values(videos).forEach(v => { // Reset all videos
+            v.style.opacity = '0';
+            v.pause();
+        });
+        video.style.opacity = '1'; // Play the selected video
         video.play();
 
         // For the audio
@@ -23,7 +35,7 @@ const video = document.getElementById('backgroundVideoo');
             playPromise.then(_ => {
                 // Automatic playback started!
             }).catch(error => {
-                // Auto-play was prevented. This can help you see if there's an issue with auto-play policies.
+                // Auto-play was prevented.
                 console.error("Playback failed: ", error);
             });
         }
@@ -38,6 +50,8 @@ const video = document.getElementById('backgroundVideoo');
         audio.currentTime = 0;
     });
 });
+
+
 
 
 
