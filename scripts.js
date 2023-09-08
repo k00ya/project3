@@ -9,7 +9,7 @@ const video = document.getElementById('backgroundVideoo');
     const audio = document.getElementById(`audio${index + 1}`);
     
     // Ensure volume is set to maximum for debugging
-    audio.volume = 1.0;
+    audio.volume = 0.3;
 
     // For the video
     square.addEventListener('mouseover', function() {
