@@ -1,4 +1,7 @@
 /*test*/
+
+
+
 body, html {
     margin: 0;
     padding: 0;
@@ -13,16 +16,29 @@ body, header {
     box-sizing: border-box;
     font-family: 'Courgette', cursive;}
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 20px;
-    background: linear-gradient(to bottom, rgba(177, 92, 92, 0.295), transparent); /* Fully transparent gradient */
-    width: 100%;
-    background-color: rgba(173, 93, 247, 0.13); /* Fully transparent background color */
-    z-index: -1; /* Ensure the header is above the video but below other content */
+    header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 8px 20px;
+      background: linear-gradient(to bottom, rgba(177, 92, 92, 0.295), transparent);
+      width: 100%;
+      background-color: rgba(173, 93, 247, 0.13);
+      z-index: -1;
+  }
+  #backgroundVideoo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth transition for fade in */
 }
+
 
 #backgroundVideo {
     position: fixed; /* Fixed position */
@@ -63,15 +79,25 @@ header {
 }
 
 /* navigation links for about, portfolio, and contact */
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 nav a {
-    margin-left: 40px;
-    color: #000000;
-    text-decoration: none;
+  margin-left: 45px;
+  color: #000000;
+  text-decoration: none;
+}
+
+nav a:first-child {
+  margin-left: 0;
 }
 
 .hover {
     --b: 0.1em;   /* the thickness of the line */
-    --c: #ed14f5; /* the color */
+    --c: #c50000; /* the color */
     
     color: #0000;
     padding-block: var(--b);
@@ -87,40 +113,98 @@ nav a {
     --_s: .3s;
   }
 
+/*-------------------*/
+
   
 /* container that has summary information */
-.summary-container {
+.summary-content  {
     width: 1000px; 
     height: 600px;
     background-color: rgba(255, 255, 255, 0.5); 
     position: absolute; 
-    top: 50%; 
+    top: 15%; 
     left: 1%; 
     transform: translateY(-50%); 
     padding: 20px; 
     box-sizing: border-box; 
     z-index: 10; 
     border: 3px solid rgba(225, 165, 240, 0.212); 
+    opacity: 1;
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Use 'ease-out' for a smoother fade and slide */
+    transform: translateX(0);
     
 }
 
-.get-started-btn {
-    position: relative;
-    margin-left: 170px;
-    top: 170px;
-    padding: 10px 20px; /* Adjust as needed */
-    background-color: #007BFF; /* Example blue color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+.summary-content.fade-out {
+  opacity: 0;
+  transform: translateX(-100%); /* Moves it to the left */
 }
 
-.get-started-btn:hover {
-    background-color: #0056b3; /* Darken the color a bit on hover */
+.glow-on-hover {
+  font-family: 'Courgette', cursive;
+  position: relative;
+  margin-left: 300px;
+  margin-right: 500px;
+  left: -150px;
+  top: 150px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  z-index: 0;
+  border-radius: 10px;
 }
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #ec6b21, #f51010, #f34e25, #da6019, #d8b310, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
   
 :root {
     --container-width: 430px;
@@ -142,8 +226,8 @@ nav a {
     border-radius: 90px;
     left: 0px;
     top: 0px;
-    background: linear-gradient(45deg, #fb0086, #ee80ee, #9553e0,#ffff00, #ff0000, #fb0086, 
-      #f134d2, #ebc418,#ffff00, #ff0000);
+    background: linear-gradient(45deg, #fb0086, #e7e412, #d32812,#ffff00, #ff0000, #f10505, 
+      #dd6e23, #ebc418,#e4a00e, #ff0000);
     background-size: 400%;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
@@ -165,19 +249,89 @@ nav a {
   
   .block:after {
     filter: blur(50px);
-  }
+  } 
   
   .summary-image {
     position: absolute;
     display: block;
     width: 435px; /* Adjust as needed */
     height: 315px; /* Adjust as needed */
-    top: 0px;        /* Adjust as needed */
-    left: 0px;   /* Adjust as needed */
+    top: 250px;        /* Adjust as needed */
+    left: 540px;   /* Adjust as needed */
     border-radius: 20%;
     z-index: 2;    /* Ensure it's above the .block container */
     
 }
+
+.squares-section {
+  position: absolute;
+  top: 250px;
+  left: 450px;
+  width: 100%; 
+  height: 100%;
+  z-index: 5; 
+}
+ 
+.hover-square {
+  width: 150px;  /* Increased width */
+  height: 150px; /* Increased height */
+  background-color: #f39740;  
+  position: absolute;  
+  top: 20%;
+  left: 50%; 
+  z-index: 100;
+  transform: translate(-50%, -50%);  
+  opacity: 0;
+  transition: 
+    opacity 1s ease-in-out,      
+    transform 0.3s ease-in-out;
+  pointer-events: auto; /* Allow pointer events */
+} 
+
+.hover-square:hover {
+  transform: translate(-50%, -50%) scale(1.1); 
+}
+ 
+#square1 {
+  left: 20%; 
+}
+
+#square2 {
+  left: calc(20% + 170px);  /* Increased spacing */
+}
+
+#square3 {
+  left: calc(20% + 340px);  /* Increased spacing */
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-out;  
+}
+
+.header-section {
+  position: absolute;
+  top: 200px; /* Adjusted the position to place it above the squares */
+  left: 1000px;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 6; /* To ensure it appears above the squares if they overlap */
+}
+
+.header-section h1 {
+  font-family: 'Arial', sans-serif; /* Example font, you can choose another one */
+  font-size: 32px;
+  color: #f39740; /* Same color as squares for consistency */
+  background-color: rgba(255, 255, 255, 0.8); /* A subtle white background with some transparency */
+  padding: 10px 20px; /* Some padding to give it a modern look */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* A subtle shadow for depth */
+  display: inline-block; /* To wrap the background around the text */
+  opacity: 0; /* Start with the header hidden */
+  transition: opacity 1s ease-in-out; /* Smooth transition for fading in */
+
+}
+
 
 
 

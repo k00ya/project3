@@ -1,11 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kurt's Portfolio</title>
+    <style>
+        /* Reset some default browser styling */
+        body, h1, h2, h3, p, a {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f39740;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Projects Section */
+        .projects {
+            max-width: 1000px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #444;
+            color: #bbb;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    </style>
 </head>
+
 <body>
-    
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to Kurt's Portfolio</h1>
+        <p>Learning Ambassador at Amazon | Passionate about adapting and learning new things</p>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="projects">
+        <!-- Project 1 -->
+        <div class="project-card">
+            <img src="imge/over.jpg" alt="Project 1">
+            <h2 class="project-title">Starfield Mods</h2>
+            <p>Diving deep into the vast universe of Starfield, I embarked on a journey to enhance the player experience through custom mods. These modifications not only introduce new gameplay mechanics but also enrich the visual and auditory senses, immersing players further into the galaxies of Starfield. Whether you're an explorer charting unknown territories or a trader navigating the star routes, my mods provide a fresh perspective to this already expansive universe.</p>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+            <img src="imge/pencil.png" alt="Project 2">
+            <h2 class="project-title">3D Pencil Maker</h2>
+            <p>Blending the realms of creativity with cutting-edge technology, the 3D Pencil Maker is a revolutionary tool designed for artists and enthusiasts alike. With a user-friendly interface, individuals can design and produce bespoke pencils tailored to their artistic needs. The 3D Pencil Maker transforms raw materials into finely crafted pencils, ensuring precision, durability, and a personal touch in every stroke. Dive into a new dimension of artistry.</p>
+        </div>
+        <!-- Add more projects as needed -->
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Email me at: <a href="mailto:your_email@example.com" style="color: #f39740;">your_email@example.com</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2023 Kurt | Designed with ❤️ 
+    </footer>
 </body>
+
 </html>

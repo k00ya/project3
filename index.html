@@ -9,28 +9,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <title>A Website</title>
 </head>
-
 <body>
+    
+<!-- header -->
 <header>
     <a class="logo" href="https://github.com/k00ya"></a>
 <nav>
-    <a class="hover" href="#about">About</a>
-    <a class="hover" href="#portfolio">Portfolio</a>
+    <a class="hover" href="about.html">About</a>
+    <a class="hover" href="portfolio.html">Portfolio</a>
     <a class="hover" href="#contact">Contact</a>
 </nav>
 </header>
+<!-- background video -->
 <video autoplay muted loop id="backgroundVideo">
     <source src="imge/nature.mp4" type="video/mp4">
 </video>
-</div>
-<!-- main content -->
-<div class="summary-container">
-    <h1>Welcome to Griffith Co.</h1>
-    <h2>Here, in this modern world, kingdoms and battles of old have been replaced by cities and technology. Adapting to this new environment, I chose a path that resonates with my strategic mind and artistic flair: Web Development.</h2>
-    <button class="get-started-btn">Get Started</button>
-    <div class="block"></block>
-    <img src="imge/surprise.gif" alt="Description of image" class="summary-image">
 
-</div>
+<!-- main content -->
+<div class="main-container">
+    <div class="summary-content">
+        <h1>Welcome to Griffith Co.</h1>
+        <h2>Here, in this modern world, kingdoms and battles of old have been replaced by cities and technology. Adapting to this new environment, I chose a path that resonates with my strategic mind and artistic flair: Web Development.</h2>
+        <button id="glow-on-hover" class="glow-on-hover" type="button">Get Started</button>    
+        <div class="block"></div>
+        <img src="imge/surprise.gif" alt="Description of image" class="summary-image">
+    </div>
+
+    <video id="backgroundVideoo" preload="auto" loop muted>
+        <source src="/imge/tech.mp4" type="video/mp4">
+    </video>
+    <div class="header-section">
+        <h1>My Top 3 Music</h1>
+    </div>  
+    <div class="squares-section">
+        <a class="hover-square" id="square1"></a>
+        <a class="hover-square" id="square2"></a>
+        <a class="hover-square" id="square3"></a>
+    </div>
+    
+<script src="scripts.js"></script>
 </body>
 </html>
