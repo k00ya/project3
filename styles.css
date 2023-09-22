@@ -344,6 +344,40 @@ nav a:first-child {
 
 }
 
+.site-footer {
+  opacity: 1;
+  background-color: #2c3e502d; /* Dark Blue */
+  color: #ecf0f1; /* Off White */
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow at the top edge */
+}
+
+.footer-content p {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* If you add links to the footer in the future */
+.site-footer a {
+  color: #ecf0f1; /* Off White */
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: #3498db; /* Bright Blue */
+}
+
+
+
+
 
 
 
