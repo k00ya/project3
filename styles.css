@@ -286,6 +286,7 @@ nav a:first-child {
 }
 
 .hover-square {
+  pointer-events: visible;
   width: 150px;
   height: 150px;
   background-color: #f39740;
