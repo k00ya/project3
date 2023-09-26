@@ -1,9 +1,16 @@
 /* General Styles */
-body {
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f2f2f2;
+    --border-color: #ccc;
+    --hover-color: #45a049;
+  }
+  
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,11 +18,12 @@ body {
   
   /* Header Styles */
   h1 {
-    background-color: #4CAF50;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, var(--primary-color) 100%);
     color: white;
     text-align: center;
     padding: 20px;
     width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   /* Form Styles */
@@ -24,10 +32,16 @@ body {
     width: 100%;
     margin: 20px 10px;
     padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  form:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   }
   
   label {
@@ -42,22 +56,55 @@ body {
     width: 100%;
     padding: 5px;
     margin: 8px 0;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
+    transition: border 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: var(--primary-color);
   }
   
   input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: var(--primary-color);
     color: white;
     padding: 14px 20px;
     margin: 20px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: var(--hover-color);
   }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 24px;
+      padding: 15px;
+    }
+  
+    form {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      font-size: 14px;
+    }
+  }
+  
+  /* Nth-child selector for alternate row styling */
+  label:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
   
   
