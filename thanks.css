@@ -1,0 +1,38 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* background gradient */
+  body {
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Create a container for content */
+  .container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2em;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  /* Style headings and text */
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+  
